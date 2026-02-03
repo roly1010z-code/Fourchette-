@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Uélé - Restaurant & Saveurs Authentiques</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d4a017;
+            --secondary-color: #2c5530;
+            --accent-color: #c14545;
+            --light-color: #f8f5f0;
+            --dark-color: #1a1a1a;
+            --gray-color: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Special Dishes */
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .dish-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dish-img {
+            height: 200px;
+            width: 100%;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .dish-info {
+            padding: 25px;
+        }
+        
+        .dish-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .dish-info p {
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+        
+        .dish-price {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        /* Opening Hours */
+        .opening-hours {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .opening-hours .section-title h2 {
+            color: white;
+        }
+        
+        .hours-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hours-content h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        
+        .hours-list {
+            list-style: none;
+            font-size: 1.2rem;
+        }
+        
+        .hours-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Location */
+        .location-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .location-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .location-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .location-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .location-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background-color: var(--dark-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 100px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .dish-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i>
+                Espace Uélé
+            </a>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#dishes">Plats Spéciaux</a></li>
+                <li><a href="#hours">Horaires</a></li>
+                <li><a href="#location">Adresse</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Bon début de semaine chez Espace Uélé !</h1>
+            <p>Commencez vos journées avec des saveurs authentiques du terroir. Chaque jour à partir de 12h, dégustez nos plats spéciaux préparés avec passion et tradition.</p>
+            <a href="#dishes" class="cta-button">Découvrir nos plats</a>
+        </div>
+    </section>
+
+    <!-- Special Dishes Section -->
+    <section class="section" id="dishes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Profitez de nos plats spéciaux</h2>
+                <p>Une sélection de saveurs authentiques du terroir</p>
+            </div>
+            
+            <div class="dishes-grid">
+                <!-- Dish cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Hours Section -->
+    <section class="section opening-hours" id="hours">
+        <div class="container">
+            <div class="section-title">
+                <h2>Horaires d'ouverture</h2>
+            </div>
+            
+            <div class="hours-content">
+                <h3>Tous les jours à partir de 12H</h3>
+                <p>Chaque semaine mérite son <strong>festin</strong></p>
+                
+                <ul class="hours-list">
+                    <li><span>Lundi</span> <span>12:00 - 22:00</span></li>
+                    <li><span>Mardi</span> <span>12:00 - 22:00</span></li>
+                    <li><span>Mercredi</span> <span>12:00 - 22:00</span></li>
+                    <li><span>Jeudi</span> <span>12:00 - 22:00</span></li>
+                    <li><span>Vendredi</span> <span>12:00 - 23:00</span></li>
+                    <li><span>Samedi</span> <span>12:00 - 23:00</span></li>
+                    <li><span>Dimanche</span> <span>12:00 - 22:00</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre adresse</h2>
+            </div>
+            
+            <div class="location-container">
+                <div class="location-info">
+                    <h3>Venez nous rendre visite</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 7676 Route Tshiniama, Quartier Kabulameshi, Commune annexe</p>
+                    <p><i class="fas fa-clock"></i> Ouvert tous les jours à partir de 12h</p>
+                    <p><i class="fas fa-phone"></i> +243 XX XXX XXXX</p>
+                    <p><i class="fas fa-envelope"></i> contact@espace-uele.com</p>
+                    <p>Nous vous accueillons dans un cadre chaleureux pour vous faire découvrir les saveurs authentiques de notre terroir.</p>
+                </div>
+                
+                <div class="map-container">
+                    <!-- Map placeholder - in a real site, you would embed a Google Map -->
+                    <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: var(--gray-color);">
+                        <div style="text-align: center;">
+                            <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 15px; color: var(--primary-color);"></i>
+                            <p>Carte interactive de notre emplacement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Espace Uélé</h3>
+                    <p>Restaurant spécialisé dans les saveurs authentiques du terroir. Nous proposons une cuisine raffinée à base de produits locaux et traditionnels.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#dishes">Plats Spéciaux</a></li>
+                        <li><a href="#hours">Horaires</a></li>
+                        <li><a href="#location">Adresse</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 7676 Route Tshiniama</li>
+                        <li><i class="fas fa-phone"></i> +243 XX XXX XXXX</li>
+                        <li><i class="fas fa-envelope"></i> contact@espace-uele.com</li>
+                        <li><i class="fas fa-clock"></i> Tous les jours à partir de 12h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Espace Uélé - Tous droits réservés. Commencez votre semaine avec saveur !</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Dishes data
+        const dishes = [
+            { name: "Crocodile", description: "Préparé selon la tradition locale avec des épices authentiques", price: "25.000 FC" },
+            { name: "Canard à la Mwamba", description: "Canard mijoté dans une sauce riche aux épinards locaux", price: "18.000 FC" },
+            { name: "Lapin à la Mwamba", description: "Lapin tendre cuit dans une sauce onctueuse aux herbes aromatiques", price: "20.000 FC" },
+            { name: "Escargot", description: "Escargots frais préparés avec une sauce savoureuse", price: "15.000 FC" },
+            { name: "Poisson du fleuve", description: "Poisson frais pêché localement, grillé ou en sauce", price: "22.000 FC" },
+            { name: "Mpose", description: "Plat traditionnel à base de banane plantain", price: "12.000 FC" },
+            { name: "Nzombo", description: "Ragoût traditionnel à base de viande et de feuilles de manioc", price: "16.000 FC" },
+            { name: "Phacochère", description: "Viande de phacochère préparée selon les traditions culinaires locales", price: "24.000 FC" },
+            { name: "Tortue", description: "Préparation délicate de tortue selon une recette ancestrale", price: "28.000 FC" }
+        ];
+        
+        // Dish images - using Unsplash food images as placeholders
+        const dishImages = [
+            "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
+            "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80",
+            "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80",
+            "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80",
+            "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
+            "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80",
+            "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        ];
+        
+        // Generate dish cards
+        const dishesGrid = document.querySelector('.dishes-grid');
+        
+        dishes.forEach((dish, index) => {
+            const dishCard = document.createElement('div');
+            dishCard.className = 'dish-card';
+            
+            dishCard.innerHTML = `
+                <div class="dish-img" style="background-image: url('${dishImages[index]}')"></div>
+                <div class="dish-info">
+                    <h3>${dish.name}</h3>
+                    <p>${dish.description}</p>
+                    <div class="dish-price">${dish.price}</div>
+                </div>
+            `;
+            
+            dishesGrid.appendChild(dishCard);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)';
+            } else {
+                header.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
