@@ -3,682 +3,738 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Uélé - Restaurant & Saveurs Authentiques</title>
+    <title>Business Communitea | Leadership Féminin & Autonomisation</title>
+    <meta name="description" content="Business Communitea est une communauté dédiée au leadership féminin et à l'autonomisation sociale et économique des femmes à Lubumbashi. We connect, empower & support.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
+        /* Variables CSS basées sur l'identité visuelle Instagram */
         :root {
-            --primary-color: #d4a017;
-            --secondary-color: #2c5530;
-            --accent-color: #c14545;
-            --light-color: #f8f5f0;
-            --dark-color: #1a1a1a;
-            --gray-color: #6c757d;
+            --primary-color: #d81b60; /* Rose/Magenta inspiré des photos et d'Octobre Rose */
+            --primary-dark: #ad144b;
+            --secondary-color: #2c3e50;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #fdfdfd;
+            --bg-gray: #f5f7fa;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
         }
-        
+
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        body {
             font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
+            overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background-color: rgba(26, 26, 26, 0.95);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        a {
             text-decoration: none;
+            color: inherit;
         }
-        
-        .logo i {
-            margin-right: 10px;
-            font-size: 2rem;
-        }
-        
-        .nav-menu {
-            display: flex;
+
+        ul {
             list-style: none;
         }
-        
-        .nav-menu li {
-            margin-left: 30px;
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
         }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
+
+        h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
+        h2 { font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 2rem; }
+        h3 { font-size: 1.25rem; font-weight: 500; }
+        p { margin-bottom: 1rem; color: var(--text-light); }
+
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 30px;
             font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-        
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
+            border: 2px solid var(--primary-color);
+            transition: var(--transition);
             cursor: pointer;
         }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0 120px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            border: 2px solid var(--primary-color);
-        }
-        
-        .cta-button:hover {
+
+        .btn:hover {
             background-color: transparent;
             color: var(--primary-color);
         }
-        
-        /* Section Styles */
-        .section {
-            padding: 100px 0;
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: var(--transition);
         }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--secondary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        .section-title h2::after {
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
             background-color: var(--primary-color);
+            transition: var(--transition);
         }
-        
-        /* Special Dishes */
-        .dishes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
-        
-        .dish-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .dish-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .dish-img {
-            height: 200px;
+
+        .nav-links a:hover::after {
             width: 100%;
-            background-color: #ddd;
-            background-size: cover;
-            background-position: center;
         }
-        
-        .dish-info {
-            padding: 25px;
-        }
-        
-        .dish-info h3 {
+
+        .menu-toggle {
+            display: none;
             font-size: 1.5rem;
-            margin-bottom: 10px;
+            cursor: pointer;
             color: var(--secondary-color);
         }
-        
-        .dish-info p {
-            color: var(--gray-color);
-            margin-bottom: 15px;
-        }
-        
-        .dish-price {
-            font-weight: 600;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-        
-        /* Opening Hours */
-        .opening-hours {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        
-        .opening-hours .section-title h2 {
-            color: white;
-        }
-        
-        .hours-content {
-            max-width: 600px;
+
+        /* Sections communes */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
-        
-        .hours-content h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-        }
-        
-        .hours-list {
-            list-style: none;
-            font-size: 1.2rem;
-        }
-        
-        .hours-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        /* 1. Hero Section */
+        .hero {
             display: flex;
-            justify-content: space-between;
-        }
-        
-        .hours-list li:last-child {
-            border-bottom: none;
-        }
-        
-        /* Location */
-        .location-container {
-            display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            gap: 50px;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding-top: 6rem;
+            gap: 2rem;
         }
-        
-        .location-info {
+
+        .hero-content {
             flex: 1;
-            min-width: 300px;
         }
-        
-        .location-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-        
-        .location-info p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        
-        .location-info i {
+
+        .hero-content h1 span {
             color: var(--primary-color);
-            margin-right: 10px;
-            width: 20px;
         }
-        
-        .map-container {
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
             flex: 1;
-            min-width: 300px;
-            height: 400px;
-            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* 2. À propos */
+        .about {
+            background-color: var(--bg-gray);
+            border-radius: 20px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .about-text ul {
+            margin-top: 1.5rem;
+        }
+
+        .about-text li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-text li i {
+            color: var(--primary-color);
+        }
+
+        /* 3. Services / Produits */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--primary-color);
+            box-shadow: 0 15px 30px rgba(216, 27, 96, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* 4. Galerie */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1 / 1;
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 80px 0 30px;
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
-        
-        .footer-content {
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(216, 27, 96, 0.7);
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
-            margin-bottom: 50px;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
         }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
         }
-        
-        .footer-column h3 {
+
+        .gallery-overlay i {
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        /* 5. Contact */
+        .contact {
+            background-color: var(--bg-gray);
+            border-radius: 20px;
+            padding: 4rem 5%;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+        }
+
+        .contact-info .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
             font-size: 1.5rem;
-            margin-bottom: 25px;
             color: var(--primary-color);
+            margin-top: 5px;
         }
-        
-        .footer-links {
-            list-style: none;
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
-        
-        .footer-links li {
-            margin-bottom: 15px;
+
+        .input-group {
+            position: relative;
         }
-        
-        .footer-links a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
         }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(216, 27, 96, 0.1);
         }
-        
-        .social-icons {
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* 6. Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 4rem 5% 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span { color: var(--primary-color); }
+        .footer-text { color: #ccc; margin-bottom: 1.5rem; }
+
+        .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
         }
-        
-        .social-icons a {
+
+        .social-links a {
             display: inline-flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
-        
-        .social-icons a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
         }
-        
+
+        .footer-links h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a { color: #ccc; transition: var(--transition); }
+        .footer-links ul li a:hover { color: var(--primary-color); padding-left: 5px; }
+
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bbb;
+            color: #888;
             font-size: 0.9rem;
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                flex-direction: column;
-                background-color: var(--dark-color);
-                width: 100%;
+
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .hero, .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+                flex-direction: column-reverse;
                 text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                padding: 20px 0;
             }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .hero {
-                padding: 150px 0 100px;
-            }
-            
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+            .hero { padding-top: 8rem; }
+            .hero-image { margin-bottom: 2rem; }
+            .about-text li { justify-content: center; }
+            .contact-info { text-align: left; }
         }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transition: var(--transition);
             }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .dish-card {
-                max-width: 350px;
-                margin: 0 auto;
-            }
+            .nav-links.active { left: 0; }
+            h1 { font-size: 2rem; }
+            section { padding: 4rem 5%; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
+
+    <header id="header">
+        <nav class="navbar">
             <a href="#" class="logo">
-                <i class="fas fa-utensils"></i>
-                Espace Uélé
+                <i class="fa-solid fa-leaf" style="color: var(--primary-color);"></i>
+                Business <span>Communitea</span>
             </a>
-            
-            <button class="mobile-toggle" id="mobileToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#dishes">Plats Spéciaux</a></li>
-                <li><a href="#hours">Horaires</a></li>
-                <li><a href="#location">Adresse</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Galerie</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Bon début de semaine chez Espace Uélé !</h1>
-            <p>Commencez vos journées avec des saveurs authentiques du terroir. Chaque jour à partir de 12h, dégustez nos plats spéciaux préparés avec passion et tradition.</p>
-            <a href="#dishes" class="cta-button">Découvrir nos plats</a>
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Le leadership féminin et <span>l'autonomisation</span> des femmes.</h1>
+            <p class="hero-subtitle">Rejoignez notre communauté à Lubumbashi. Ensemble, nous connectons, soutenons et propulsons les femmes vers le succès économique et social.</p>
+            <a href="#services" class="btn">Découvrir nos actions</a>
+            <a href="https://docs.google.com/forms/" target="_blank" class="btn" style="background: transparent; color: var(--primary-color); margin-left: 10px;">Rejoindre (Formulaire)</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800" alt="Femmes leaders Business Communitea">
         </div>
     </section>
 
-    <!-- Special Dishes Section -->
-    <section class="section" id="dishes">
-        <div class="container">
-            <div class="section-title">
-                <h2>Profitez de nos plats spéciaux</h2>
-                <p>Une sélection de saveurs authentiques du terroir</p>
+    <section id="apropos" class="about">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1bfa82?auto=format&fit=crop&q=80&w=800" alt="À propos de nous">
             </div>
-            
-            <div class="dishes-grid">
-                <!-- Dish cards will be generated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Opening Hours Section -->
-    <section class="section opening-hours" id="hours">
-        <div class="container">
-            <div class="section-title">
-                <h2>Horaires d'ouverture</h2>
-            </div>
-            
-            <div class="hours-content">
-                <h3>Tous les jours à partir de 12H</h3>
-                <p>Chaque semaine mérite son <strong>festin</strong></p>
-                
-                <ul class="hours-list">
-                    <li><span>Lundi</span> <span>12:00 - 22:00</span></li>
-                    <li><span>Mardi</span> <span>12:00 - 22:00</span></li>
-                    <li><span>Mercredi</span> <span>12:00 - 22:00</span></li>
-                    <li><span>Jeudi</span> <span>12:00 - 22:00</span></li>
-                    <li><span>Vendredi</span> <span>12:00 - 23:00</span></li>
-                    <li><span>Samedi</span> <span>12:00 - 23:00</span></li>
-                    <li><span>Dimanche</span> <span>12:00 - 22:00</span></li>
+            <div class="about-text">
+                <h2>Qui sommes-nous ?</h2>
+                <p><strong>Business Communitea</strong> est bien plus qu'un réseau. C'est une plateforme d'opportunités née de la volonté de valoriser le leadership féminin. Basés à Lubumbashi, nous œuvrons pour un impact social et économique réel.</p>
+                <p>Notre devise : <strong>We connect, empower & support.</strong></p>
+                <ul>
+                    <li><i class="fa-solid fa-check-circle"></i> Connexion et réseautage (Networking)</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Indépendance financière des femmes</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Développement personnel et professionnel</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Location Section -->
-    <section class="section" id="location">
-        <div class="container">
-            <div class="section-title">
-                <h2>Notre adresse</h2>
+    <section id="services">
+        <h2>Nos Actions & Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-mug-hot service-icon"></i>
+                <h3>BC Brunch & Networking</h3>
+                <p>Des rencontres exclusives pour échanger, créer des synergies et partager des opportunités d'affaires entre femmes leaders.</p>
             </div>
-            
-            <div class="location-container">
-                <div class="location-info">
-                    <h3>Venez nous rendre visite</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 7676 Route Tshiniama, Quartier Kabulameshi, Commune annexe</p>
-                    <p><i class="fas fa-clock"></i> Ouvert tous les jours à partir de 12h</p>
-                    <p><i class="fas fa-phone"></i> +243 XX XXX XXXX</p>
-                    <p><i class="fas fa-envelope"></i> contact@espace-uele.com</p>
-                    <p>Nous vous accueillons dans un cadre chaleureux pour vous faire découvrir les saveurs authentiques de notre terroir.</p>
-                </div>
-                
-                <div class="map-container">
-                    <!-- Map placeholder - in a real site, you would embed a Google Map -->
-                    <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: var(--gray-color);">
-                        <div style="text-align: center;">
-                            <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 15px; color: var(--primary-color);"></i>
-                            <p>Carte interactive de notre emplacement</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="service-card">
+                <i class="fa-solid fa-microphone-lines service-icon"></i>
+                <h3>Podcasts & Inspirations</h3>
+                <p>Découvrez les parcours inspirants de femmes exceptionnelles à travers nos épisodes de podcasts et interviews.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-ribbon service-icon"></i>
+                <h3>Soutien & Sensibilisation</h3>
+                <p>Engagement social fort (comme notre campagne Octobre Rose) et accompagnement pour l'autonomisation économique.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Espace Uélé</h3>
-                    <p>Restaurant spécialisé dans les saveurs authentiques du terroir. Nous proposons une cuisine raffinée à base de produits locaux et traditionnels.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+    <section id="galerie">
+        <h2>Notre Communauté en Images</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=500" alt="Événement Business">
+                <div class="gallery-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=500" alt="Femme leader">
+                <div class="gallery-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1515161318750-781d6122e367?auto=format&fit=crop&q=80&w=500" alt="Podcast backstage">
+                <div class="gallery-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=500" alt="Intervention">
+                <div class="gallery-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=500" alt="Networking">
+                <div class="gallery-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1444084316824-dc26d6657664?auto=format&fit=crop&q=80&w=500" alt="Ville de Lubumbashi">
+                <div class="gallery-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contactez-nous</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Prête à rejoindre le mouvement ?</h3>
+                <p>Que ce soit pour un partenariat, une question sur nos prochains événements ou pour rejoindre la communauté, n'hésitez pas à nous écrire.</p>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Localisation</h4>
+                        <p>Lubumbashi, Haut-Katanga, RDC</p>
                     </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Navigation</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Accueil</a></li>
-                        <li><a href="#dishes">Plats Spéciaux</a></li>
-                        <li><a href="#hours">Horaires</a></li>
-                        <li><a href="#location">Adresse</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@businesscommunitea.com</p>
+                    </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 7676 Route Tshiniama</li>
-                        <li><i class="fas fa-phone"></i> +243 XX XXX XXXX</li>
-                        <li><i class="fas fa-envelope"></i> contact@espace-uele.com</li>
-                        <li><i class="fas fa-clock"></i> Tous les jours à partir de 12h</li>
-                    </ul>
+                <div class="info-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div>
+                        <h4>Prochain événement</h4>
+                        <p>Octobre 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="input-group">
+                    <input type="text" id="nom" placeholder="Votre Nom Complet" required>
+                    <div class="error-msg" id="nomError">Veuillez entrer votre nom.</div>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Votre Adresse Email" required>
+                    <div class="error-msg" id="emailError">Veuillez entrer un email valide.</div>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" placeholder="Votre Message..." required></textarea>
+                    <div class="error-msg" id="msgError">Veuillez écrire un message.</div>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo"><i class="fa-solid fa-leaf"></i> Business <span>Communitea</span></div>
+                <p class="footer-text">Le leadership féminin et l'autonomisation sociale et économique des femmes. We connect, empower & support.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/businesscommunitea" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>&copy; 2023 Espace Uélé - Tous droits réservés. Commencez votre semaine avec saveur !</p>
+            <div class="footer-links">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                </ul>
             </div>
+
+            <div class="footer-links">
+                <h3>Légal</h3>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Business Communitea. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileToggle.querySelector('i').classList.toggle('fa-bars');
-            mobileToggle.querySelector('i').classList.toggle('fa-times');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileToggle.querySelector('i').classList.remove('fa-times');
-                mobileToggle.querySelector('i').classList.add('fa-bars');
-            });
-        });
-        
-        // Dishes data
-        const dishes = [
-            { name: "Crocodile", description: "Préparé selon la tradition locale avec des épices authentiques", price: "25.000 FC" },
-            { name: "Canard à la Mwamba", description: "Canard mijoté dans une sauce riche aux épinards locaux", price: "18.000 FC" },
-            { name: "Lapin à la Mwamba", description: "Lapin tendre cuit dans une sauce onctueuse aux herbes aromatiques", price: "20.000 FC" },
-            { name: "Escargot", description: "Escargots frais préparés avec une sauce savoureuse", price: "15.000 FC" },
-            { name: "Poisson du fleuve", description: "Poisson frais pêché localement, grillé ou en sauce", price: "22.000 FC" },
-            { name: "Mpose", description: "Plat traditionnel à base de banane plantain", price: "12.000 FC" },
-            { name: "Nzombo", description: "Ragoût traditionnel à base de viande et de feuilles de manioc", price: "16.000 FC" },
-            { name: "Phacochère", description: "Viande de phacochère préparée selon les traditions culinaires locales", price: "24.000 FC" },
-            { name: "Tortue", description: "Préparation délicate de tortue selon une recette ancestrale", price: "28.000 FC" }
-        ];
-        
-        // Dish images - using Unsplash food images as placeholders
-        const dishImages = [
-            "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
-            "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80",
-            "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80",
-            "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80",
-            "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
-            "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80",
-            "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-        ];
-        
-        // Generate dish cards
-        const dishesGrid = document.querySelector('.dishes-grid');
-        
-        dishes.forEach((dish, index) => {
-            const dishCard = document.createElement('div');
-            dishCard.className = 'dish-card';
-            
-            dishCard.innerHTML = `
-                <div class="dish-img" style="background-image: url('${dishImages[index]}')"></div>
-                <div class="dish-info">
-                    <h3>${dish.name}</h3>
-                    <p>${dish.description}</p>
-                    <div class="dish-price">${dish.price}</div>
-                </div>
-            `;
-            
-            dishesGrid.appendChild(dishCard);
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Header background on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)';
+        // Menu Mobile Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            if(navLinks.classList.contains('active')){
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
             } else {
-                header.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Fermer le menu mobile en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.querySelector('i').classList.remove('fa-xmark');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.1)";
+                header.style.padding = "0.5rem 0";
+            } else {
+                header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+                header.style.padding = "0";
+            }
+        });
+
+        // Form Validation Simple
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nom = document.getElementById('nom').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            let isValid = true;
+
+            // Vérification basique
+            if(nom === "") {
+                document.getElementById('nomError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('nomError').style.display = 'none';
+            }
+
+            if(email === "" || !email.includes('@')) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            if(message === "") {
+                document.getElementById('msgError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('msgError').style.display = 'none';
+            }
+
+            // Si tout est valide
+            if(isValid) {
+                alert(`Merci ${nom} ! Votre message a bien été envoyé à Business Communitea.`);
+                contactForm.reset();
             }
         });
     </script>
